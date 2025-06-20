@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
 export const dbConnection = () => {
   mongoose
-    .connect("mongodb+srv://anuruddhpratapsingh82974:wjjeQ8WPr1oVwnHU@cluster0.ybgeudz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
+    .connect((process.env.MONGO_URI), {
       dbName: "taskManagement",
     })
     .then(() => {

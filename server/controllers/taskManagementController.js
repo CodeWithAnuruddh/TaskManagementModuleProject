@@ -81,7 +81,7 @@ export const decodeTokenAndGetId = (token) => {
   try {
     const decoded = jwt.verify(
       token,
-      "12969faa3de4be9e87c514f2cb82b54ab5c21eb28a9c4c15d9ab16c1a396391c"
+      process.env.JWT_SECRET_KEY
     );
 
     return decoded.id;
